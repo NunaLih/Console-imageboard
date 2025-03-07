@@ -1,0 +1,192 @@
+/* Общий стиль терминала */
+body {
+	background-color: #000000;
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	font-family: 'Courier Prime', serif;
+}
+
+.terminal {
+	overflow-y: auto;
+	width: 90%;
+	margin: 50px auto;
+	background-color: #000000;
+	color: #ffffff;
+	padding: 20px;
+	border: 1px solid #ffffff;
+	border-radius: 8px;
+}
+
+.output {
+	height: 700px;
+	overflow-y: auto;
+	margin-bottom: 10px;
+}
+
+.output div {
+	margin-bottom: 5px;
+	padding-top: 5px;
+}
+
+.input-area {
+	display: flex;
+	align-items: center;
+}
+
+.prompt {
+	margin-right: 5px;
+}
+
+.command-input {
+	background-color: #000000;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	width: 100%;
+}
+
+.command-input::placeholder {
+	color: #ffffff;
+	opacity: 0.5;
+}
+
+.color-riv {
+	color: black;
+	background-color: white;
+}
+
+.board-name {
+	animation: gl 2.5s linear infinite;
+}
+
+.date-threads {
+	color: rgb(96, 165, 96);
+}
+
+.date-mess {
+	color: rgb(208, 243, 208);
+}
+
+.block-container {
+	position: relative;
+	padding: 15px 15px 15px 35px;
+	margin: 18px 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.side-lines {
+	position: absolute;
+	left: 15px;
+	top: 40%;
+	transform: translateY(-50%);
+	width: 3px;
+	height: 60%;
+	background: linear-gradient(
+		to bottom,
+		#ccc 0%,
+		#ccc 20%,
+		transparent 20%,
+		transparent 40%,
+		#ccc 40%,
+		#ccc 60%,
+		transparent 60%,
+		transparent 80%,
+		#ccc 80%,
+		#ccc 100%
+	);
+}
+
+.board-name,
+.date-threads,
+.date-mess {
+	margin-left: 5px;
+	color: #666;
+}
+
+.command-line {
+	white-space: pre;
+	font-family: monospace;
+	margin: 4px 0;
+}
+
+div::-webkit-scrollbar {
+	width: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 5px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+@keyframes gl {
+	0% {
+		color: white;
+		transform: translateX(0) translateY(0%);
+	}
+	25% {
+		color: #353634;
+		transform: translateX(1px) translateY(1px);
+	}
+	40% {
+		color: #e74c3c;
+		transform: translateX(-2px) translateY(-2px);
+	}
+	50% {
+		color: #cccccc;
+		transform: translateX(0) translateY(0);
+	}
+	80% {
+		color: #555051;
+		transform: translateX(2px) translateY(2px);
+	}
+	90% {
+		color: #e74c3c;
+		transform: translateX(-1px) translateY(-1px);
+	}
+	100% {
+		color: white;
+		transform: translateX(0) translateY(0);
+	}
+}
+/* Стили для спойлеров с анимацией при наведении */
+.spoiler {
+	background: #222;
+	color: transparent;
+	cursor: pointer;
+	padding: 2px 9px;
+	border-radius: 3px;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.spoiler:hover {
+	background: transparent;
+	color: inherit;
+}
+
+.spoiler::before {
+	content: 'Spoiler';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #666;
+	font-size: 0.8em;
+	opacity: 1;
+	transition: opacity 0.2s;
+}
+
+.spoiler:hover::before {
+	opacity: 0;
+}
+
+img {
+	width: 350px;
+}
